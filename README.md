@@ -1,3 +1,13 @@
+## twitterforsanders
+
+This is basically a re-implementation of the pretty awesome idea that exists at https://github.com/mbiokyle29/endorse-bot.
+
+It tracks folks who have said they endorse Bernie on Twitter and stores them for analysis.
+
+The "production" app lives at:
+
+https://twitterforsanders.herokuapp.com
+
 ## Hacking
 
 * Create a standard Twitter app
