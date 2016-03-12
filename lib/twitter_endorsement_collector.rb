@@ -7,9 +7,9 @@ class TwitterEndorsementCollector
     end
   end
 
-  def collect
-    Rails.logger.info "collecting tweets..."
-    tweets = @client.search("I endorse @BernieSanders OR I endorse Bernie Sanders", since_id: @since_id, count: 100)
+  def collect(query)
+    Rails.logger.info "collecting tweets for '#{query}'..."
+    tweets = @client.search(query, since_id: @since_id, count: 100)
     tweets_collected = 0
     tweets.each do |tweet|
       next if tweet.retweet?
@@ -31,10 +31,16 @@ class TwitterEndorsementCollector
     retry
   end
 
-  def collect_until_empty
-    collected = collect
+  def collect_until_empty(query)
+    collected = collect query
     while collected > 0
-      collected = collect
+      collected = collect query
+    end
+  end
+
+  def collect_for_queries(queries)
+    queries.each do |query|
+      collect_until_empty(query)
     end
   end
 
