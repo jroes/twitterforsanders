@@ -20,7 +20,6 @@ class TwitterEndorsementCollector
         endorsement_tweet.followers = tweet.user.followers_count
         endorsement_tweet.tweeted_at = tweet.created_at
         endorsement_tweet.url = tweet.url.to_s
-        endorsement_tweet.oembed = @client.oembed(tweet.id, hide_media: true, hide_thread: true, omit_script: true).html.html_safe
         tweets_collected += 1
       end
     end
