@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306063511) do
+ActiveRecord::Schema.define(version: 20160312205239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160306063511) do
     t.datetime "tweeted_at"
     t.string   "profile_image_url"
     t.string   "url"
+    t.string   "oembed"
   end
 
 end

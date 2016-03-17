@@ -12,5 +12,9 @@ https://twitterforsanders.herokuapp.com
 
 * Create a standard Twitter app
 * Add TWITTER_CONSUMER_KEY and TWITTER_CONSUMER_SECRET to your .env
+* `bundle install`
 * `rake db:create`
-* `forego run rake collector:twitter_endorsements` (tail log/development.log for progress)
+* `rake db:migrate`
+
+* `rake collector:twitter_endorsements` (tail log/development.log for progress)
+* `forego run rake collector:twitter_endorsements` (background)
